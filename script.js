@@ -32,21 +32,30 @@ const APPLICATION_CATEGORIES = [
   },
 ];
 
+const APPLICATIONS_OPEN = false;
+
 const applyGrid = document.getElementById("applyCategories");
 
-APPLICATION_CATEGORIES.forEach((cat) => {
-  const card = document.createElement("a");
-  card.className = "apply-card";
-  card.href = cat.url;
-  card.target = "_blank";
-  card.rel = "noopener";
-  card.innerHTML = `
-    <span class="apply-card-icon">${cat.icon}</span>
-    <h3 class="apply-card-title">${cat.title}</h3>
-    <span class="apply-card-btn">Başvur</span>
-  `;
-  applyGrid.appendChild(card);
-});
+if (APPLICATIONS_OPEN) {
+  APPLICATION_CATEGORIES.forEach((cat) => {
+    const card = document.createElement("a");
+    card.className = "apply-card";
+    card.href = cat.url;
+    card.target = "_blank";
+    card.rel = "noopener";
+    card.innerHTML = `
+      <span class="apply-card-icon">${cat.icon}</span>
+      <h3 class="apply-card-title">${cat.title}</h3>
+      <span class="apply-card-btn">Başvur</span>
+    `;
+    applyGrid.appendChild(card);
+  });
+} else {
+  applyGrid.remove();
+  document.querySelector(".cta-note").remove();
+  document.querySelector(".hero-actions .btn-primary").remove();
+  document.querySelector(".cta-text").textContent = "Başvurular geçici süreliğine kapatıldı.";
+}
 
 const navToggle = document.getElementById("navToggle");
 const mainNav = document.getElementById("mainNav");
