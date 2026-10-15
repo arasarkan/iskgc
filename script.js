@@ -7,6 +7,8 @@ const ICONS = {
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10v1a7 7 0 0 0 14 0v-1"/><path d="M12 18v3"/><path d="M8 21h8"/></svg>',
   delegasyon:
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v18"/><path d="M5 4h13l-3 4 3 4H5"/></svg>',
+  vekil:
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="4"/><path d="M2 21v-1a7 7 0 0 1 14 0v1"/><path d="m16 11 2 2 4-4"/></svg>',
 };
 
 const APPLICATION_CATEGORIES = [
@@ -30,9 +32,14 @@ const APPLICATION_CATEGORIES = [
     icon: ICONS.basin,
     url: "https://forms.gle/mBvwGSRwbhCr3ffh9",
   },
+  {
+    title: "Vekil",
+    icon: ICONS.vekil,
+    url: "https://forms.gle/qmh1dg3ebyBoR9589",
+  },
 ];
 
-const APPLICATIONS_OPEN = false;
+const APPLICATIONS_OPEN = true;
 
 const applyGrid = document.getElementById("applyCategories");
 
